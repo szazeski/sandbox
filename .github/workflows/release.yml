@@ -10,8 +10,12 @@ on:
 jobs:
   build:
     name: Create Release
+
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
+      - name: Echo github obj
+        run: 'echo "payload: ${{ toJson(github.event) }}"'
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Create Release
