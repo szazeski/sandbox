@@ -7,4 +7,5 @@ jobs:
   postrelease:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ github.event}}
+      - name: Echo github obj
+        run: echo ${{ toJson(github) }}
