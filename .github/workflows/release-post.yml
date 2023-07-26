@@ -1,0 +1,10 @@
+
+name: After Release
+
+on: [release]
+
+jobs:
+  postrelease:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ github.event}}
